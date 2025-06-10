@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('samp.jpg');
+      color: #FFFFFF;
+    }
+    .result {
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 10px;
+      background: linear-gradient(to bottom right, #4e4376, #2b5876, #4e4376);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .result-content {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .selected {
+      background-color: #3adab4;
+    }
+  </style>
+</head>
+<body>
+  <div class="result">
+    <div class="result-content" id="result"></div>
+    <div class="action-buttons">
+      <button class="btn" onclick="window.location.href='quiz.html'">Retake Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const result = urlParams.get('result');
+
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = result;
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Section with Textboxes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body{
+                background-image: url('anger.jpg');
+                background-size:cover;
+            }
+            body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.centered-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+    width: 30%;
+    background: rgba(64,64,64,0.15);
+    border: 3px solid rgba(255,255,255,0.3);
+    padding:30px;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.15);
+}
+
+.heading {
+  font-size: 24px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.content {
+  color: lightpink;
+  text-align: justify;
+}
+.section{
+    padding-top:100px;
+    text-align: center;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+    </style>
+
+<section class="centered-section">
+  <div class="container">
+    <h2 class="heading">Feeling Angry?</h2>
+    <p class="content"> Anger is a powerful emotion, but how we channel it determines its impact on our lives. Instead of allowing anger to consume us, let's harness its energy to fuel positive change. Use it as a catalyst for growth, a reminder of our values, and a motivation to strive for understanding and empathy. Remember, it's not about suppressing anger, but about transforming it into constructive action. Let's embrace patience, forgiveness, and resilience, and let anger be a stepping stone towards greater compassion and inner peace.</p>
+  </div>
+</section>
+</body>
+</html>

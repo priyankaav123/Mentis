@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotion Stack</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .emotion-bigbox{
+    background-image: url(samp.jpg);
+    border-radius: 10px;
+    margin:auto;
+    margin-top:30px;
+    padding-top:20px;
+    width: 75%;
+    
+  }
+  .emotion-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+  .emotion-box {
+    width: 100%;
+    background-color: #3498db;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .emotion-title {
+    background-color: #2980b9;
+    
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .emotion-content {
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left:20px;
+    color: #fff;
+  }
+  .learn-more-btn {
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  .hidden {
+    display: none;
+  }
+
+</style>
+</head>
+<body>
+<div class="emotion-bigbox">
+<div class="emotion-container">
+  <div class="emotion-box" id="sad">
+    <div class="emotion-title" id="sad" onclick="toggleEmotion('sad')" >Sad</div>
+    <div class="emotion-content hidden">
+      <p>A feeling of sorrow or unhappiness.</p>
+      <button class="learn-more-btn" onclick="toggleEmotion1('sad')">Learn More</button>
+    </div>
+  </div>
+
+  <div class="emotion-box" id="anger">
+    <div class="emotion-title" onclick="toggleEmotion('anger')">Anger</div>
+    <div class="emotion-content hidden">
+      <p>A strong feeling of displeasure or hostility.</p>
+      <button class="learn-more-btn" onclick="toggleEmotion1('anger')">Learn More</button>
+    </div>
+  </div>
+
+  <div class="emotion-box" id="lonely">
+    <div class="emotion-title" onclick="toggleEmotion('lonely')">Lonely</div>
+    <div class="emotion-content hidden">
+      <p>Feeling sad and alone.</p>
+      <button class="learn-more-btn" onclick="toggleEmotion1('lonely')">Learn More</button>
+    </div>
+  </div>
+
+  <div class="emotion-box" id="hopeless">
+    <div class="emotion-title" onclick="toggleEmotion('hopeless')">Hopeless</div>
+    <div class="emotion-content hidden">
+      <p>Feeling without hope or despairing.</p>
+      <button class="learn-more-btn" onclick="toggleEmotion1('hopeless')">Learn More</button>
+    </div>
+  </div>
+
+  <div class="emotion-box" id="anxious">
+    <div class="emotion-title" onclick="toggleEmotion('anxious')">Anxious</div>
+    <div class="emotion-content hidden">
+      <p>Feeling overwhelmed or under pressure.</p>
+      <button class="learn-more-btn" onclick="toggleEmotion1('anxious')">Learn More</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+  function toggleEmotion1(emotion){
+    window.location.href = emotion + '.html';
+  }
+  function toggleEmotion(emotion) {
+    var box = document.getElementById(emotion);
+    var content = box.querySelector('.emotion-content');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      box.style.height = content.scrollHeight + 'px';
+    } else {
+      content.classList.add('hidden');
+      box.style.height = box.querySelector('.emotion-title').scrollHeight + 'px';
+    }
+  }
+</script>
+
+</body>
+</html>

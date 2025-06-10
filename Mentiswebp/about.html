@@ -1,0 +1,174 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Section Layout</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <style>
+          body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .section-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section {
+    width: calc(25% - 20px); 
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    background-color: lightcyan;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .section:nth-child(1) {
+    background-image: url('white.jpg'); 
+  }
+
+  .section:nth-child(2) {
+    background-image: url('white.jpg'); 
+  }
+
+  .section:nth-child(3) {
+    background-image: url('white.jpg'); 
+  }
+
+  .section:nth-child(4) {
+    background-image: url('white.jpg'); 
+  }
+
+  .heading {
+    text-align: center;
+    font-style: italic;
+    color: darkcyan;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .content p {
+    color:darkblue;
+  }
+
+  .content li {
+    color:black;
+    font-weight: bold;
+  }
+
+  .learn-more {
+    display: block;
+    margin: 0 auto; 
+    color: #fff;
+    background-color: #007bff;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .learn-more:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+
+  header{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      font-stretch: semi-expanded;
+      font-size: large;
+  }
+      </style>
+      
+      <header>
+          <h1>About Us</h1>
+          <p>At Mentis, we're dedicated to providing a safe and supportive space for individuals to explore, learn, and grow in their mental health journey. Our platform is designed to offer resources, tools, and a sense of community for those seeking guidance, support, and understanding.</p>
+      </header>
+
+  <div class="section-wrapper">
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2 class="heading">Our Mission</h2>
+          <ul>
+              <li>Empowerment through knowledge
+                  <p>We believe that education is key to understanding and managing mental health challenges. Our mission is to empower individuals with accurate information, resources, and practical strategies to enhance their mental well-being.</p>
+              </li>
+              <li>Fostering connection
+                  <p>Our platform serves as a virtual community where individuals can connect with others who share similar experiences, challenges, and goals. We believe in the healing power of connection and peer support.</p>
+              </li>
+          </ul>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2 class="heading">Who we are?</h2>
+          <ul>
+              <li>Passionate advocates
+                  <p>We are passionate advocates for mental health awareness and support.Through writing, community engagement; we are committed to making a positive difference in the lives of those affected by such issues.</p>
+              </li>
+              <li>Community members
+                  <p>More than just a team; we are a community. Many of us have personally experienced struggles mentally and understand the importance of empathy and support in one's journey to recovery and resilience.</p>
+              </li>
+          </ul>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2 class="heading">What we offer?</h2>
+          <ul>
+              <li>Informative Resources
+                  <p>Our website features a wealth of articles and resources covering various topics, from anxiety and depression to stress management and self-care. These are carefully curated to provide accurate information and practical tips for mental well-being.</p>
+              </li>
+              <li>Interactive Tools
+                  <p>We offer interactive tools and a self assessment quiz designed to enhance self-awareness and emotional resilience. Our tools empower individuals to actively participate in their mental health journey.</p>
+              </li>
+          </ul>        
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2 class="heading">Get involved!</h2>
+          <ul>
+              <li>Share your story 
+                  <p>We encourage individuals to share their personal experiences with mental health challenges, recovery, and resilience. Your story has the power to inspire and uplift others who may be facing similar struggles.
+                  </p>
+              </li>
+              <li>Stay connected
+                  <p>Stay updated on the latest news, articles, and events by following us on social media and subscribing to our newsletter. Together, we look forward to the creation of a more supportive and understanding community around mental health.</p>
+              </li>
+          </ul>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  </body>
+  </html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('samp.jpg');
+      color: #FFFFFF;
+    }
+    .quiz-container {
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 10px;
+      background: linear-gradient(to bottom right, #4e4376, #2b5876, #4e4376);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    h1, p {
+      text-align: center;
+    }
+    .quiz-question {
+      margin-bottom: 20px;
+    }
+    .quiz-feedback {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .quiz-options label {
+      display: block;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+    .quiz-options label:hover {
+      border-color: #2196F3;
+    }
+    .quiz-options input {
+      display: none; 
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .selected {
+      background-color: #3adab4;
+    }
+    .big-title {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1 class="big-title">Mentis</h1> 
+
+    <div class="quiz-question">
+      <h3 id="questionText">Question 1: How do you usually feel in social situations?</h3> 
+      <div class="quiz-options" id="options">
+      </div>
+      <div class="quiz-feedback" id="feedback"></div>
+      <div class="action-buttons">
+        <button class="btn" onclick="checkAnswer()">Submit Answer</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let streakCounter = 0;
+    let currentQuestionIndex = 0;
+    let clusterA = 0;
+    let clusterB = 0;
+    let clusterC = 0;
+    let clusterD = 0;
+
+    let questions = [
+      {
+        question: "How do you usually feel in social situations?",
+        options: [
+          "Comfortable and confident",
+          "Anxious and self-conscious",
+          "Indifferent or detached",
+          "Overwhelmed or suffocated"
+        ]
+      },
+      {
+        question: "How do you cope with stressful situations?",
+        options: [
+          "Seek support from others",
+          "Avoid the situation altogether",
+          "Internalize feelings and thoughts",
+          "Act impulsively or recklessly"
+        ]
+      },
+      {
+        question: "How do you perceive relationships with others?",
+        options: [
+          "Enjoy and value relationships",
+          "Struggle with trust and intimacy",
+          "Prefer solitude over socializing",
+          "Experience intense and unstable relationships"
+        ]
+      },
+      {
+        question: "How do you handle criticism and relationships?",
+        options: [
+          "Accept and reflect on feedback",
+          "Take criticism personally",
+          "Emotionally detach from feedback",
+          "React with anger or hostility"
+        ]
+      },
+      {
+        question: "How do you view yourself and your abilities?",
+        options: [
+          "Have a balanced and realistic self-image",
+          "Doubt yourself and your capabilities",
+          "Feel disconnected from your identity",
+          "Experience fluctuating self-esteem"
+        ]
+      },
+      {
+        question: "How do you manage your emotions?",
+        options: [
+          "Express emotions openly and constructively",
+          "Suppress or avoid emotions",
+          "Feel emotionally numb or detached",
+          "Have intense and unpredictable emotional outbursts"
+        ]
+      },
+      {
+        question: "How do you make decisions in daily life?",
+        options: [
+          "Consider options carefully and rationally",
+          "Struggle to make decisions due to fear or indecisiveness",
+          "Let others make decisions for you",
+          "Make impulsive or risky decisions"
+        ]
+      },
+      {
+        question: "How do you handle conflicts with others?",
+        options: [
+          "Communicate openly and resolve conflicts peacefully",
+          "Avoid conflicts at all costs",
+          "Feel indifferent towards conflicts",
+          "React aggressively or defensively in conflicts"
+        ]
+      },
+      {
+        question: "How do you view rules and authority?",
+        options: [
+          "Respect rules and authority figures",
+          "Challenge rules and authority",
+          "Feel disconnected from societal norms",
+          "Disregard rules and rebel against authority"
+        ]
+      },
+      {
+        question: "How do you feel about the future and long-term goals?",
+        options: [
+          "Have clear goals and plans for the future",
+          "Feel uncertain and lack direction",
+          "Live in the present without focusing on the future",
+          "Have impulsive or unrealistic long-term goals"
+        ]
+      }
+    ];
+
+    function loadQuestion(questionIndex) {
+      const question = questions[questionIndex];
+      document.getElementById('questionText').textContent = "Question " + (questionIndex + 1) + ": " + question.question;
+      const optionsContainer = document.getElementById('options');
+      optionsContainer.innerHTML = "";
+      question.options.forEach((option, index) => {
+        const input = document.createElement('input');
+        input.type = "radio";
+        input.id = "option" + (index + 1);
+        input.name = "q1";
+        input.value = index; 
+        const label = document.createElement('label');
+        label.htmlFor = "option" + (index + 1);
+       
+        label.textContent = option;
+        label.onclick = function() {
+          selectAnswer('option' + (index + 1), index); 
+        }
+        optionsContainer.appendChild(input);
+        optionsContainer.appendChild(label);
+      });
+    }
+
+    function selectAnswer(optionId, index) {
+      const selectedOption = document.querySelector('label[for="' + optionId + '"]');
+      if (selectedOption) {
+        document.querySelectorAll('.quiz-options label').forEach(label => {
+          label.classList.remove('selected');
+        });
+        selectedOption.classList.add('selected');
+        switch (index) {
+          case 0:
+            clusterA++;
+            break;
+          case 1:
+            clusterB++;
+            break;
+          case 2:
+            clusterC++;
+            break;
+          case 3:
+            clusterD++;
+            break;
+          default:
+            break;
+        }
+      }
+    }
+
+    function checkAnswer() {
+      const userAnswer = document.querySelector('input[name="q1"]:checked');
+      if (!userAnswer) {
+        alert("Please select an answer.");
+        return ;
+      }
+
+      nextQuestion();
+    }
+
+    function nextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion(currentQuestionIndex);
+        document.querySelectorAll('input[name="q1"]').forEach(input => {
+          input.checked = false;
+        });
+      } else {
+        displayResult();
+      }
+    }
+
+
+      function displayResult() {
+      let result = "";
+      if (clusterA > clusterB && clusterA > clusterC && clusterA > clusterD) {
+        result = "This individual demonstrates a healthy level of confidence, social skills, emotional regulation, and decision-making abilities. They generally have a positive perception of themselves, maintain healthy relationships, and cope well with stress and conflicts.";
+      } else if (clusterB > clusterA && clusterB > clusterC && clusterB > clusterD) {
+        result = "Individuals who consistently feel anxious and self-conscious in social situations, avoid them whenever possible, and struggle with feelings of inadequacy and fear of rejection may align with symptoms of Avoidant Personality Disorder.";
+      } else if (clusterC > clusterA && clusterC > clusterB && clusterC > clusterD) {
+        result = "People who prefer solitude over socializing, feel detached from their emotions and relationships, and exhibit limited emotional expression may exhibit traits consistent with Schizoid Personality Disorder.";
+      } else {
+        result = "Those who experience intense and unstable relationships, struggle with emotional regulation, have fluctuating self-esteem, and may engage in impulsive behaviors, such as emotional outbursts or reckless decision-making, may exhibit symptoms of Borderline Personality Disorder.";
+      }
+      
+      window.location.href = "result.html?result=" + encodeURIComponent(result);
+  }
+
+    
+
+    loadQuestion(currentQuestionIndex);
+  </script>
+</body>
+</html>

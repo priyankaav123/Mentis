@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            overflow-x: hidden;
+            background-image: url("samp.jpg");
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .white{
+            color: rgb(182, 98, 112);
+        }
+        .section {
+
+            padding-top:100px;
+            text-align: center;
+        }
+        .abb {
+
+            padding-top:100px;
+            text-align: center;
+        }
+        .container {
+            display: block;
+            max-width: 800px;
+            margin: 0 auto;
+            
+        }
+
+        .container h2 {
+            color: #2c3e50;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            clear: both;
+            animation: fadeInUp 1s ease;
+        }
+
+        .chat-window {
+            padding: 5px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .bot-message {
+            text-align: left;
+        }
+
+        .user-input {
+            width: calc(100% - 70px);
+            padding: 5px;
+            border: none;
+            border-top: 1px solid #ccc;
+            border-radius: 0;
+            float: left;
+        }
+
+        .send-button {
+            width: 60px;
+            padding: 5px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 0;
+            cursor: pointer;
+            float: right;
+            transition: background-color 0.3s ease;
+        }
+
+        .send-button:hover {
+            background-color: #45a049;
+        }
+        
+
+        #about,
+        #emotions,
+        #resources,
+        #chatbot,
+        #quiz
+        #FAQ{
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+.section-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section {
+  width: calc(25% - 20px); 
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  background-size: cover;
+  background-position: center;
+}
+
+.containerone {
+    background: rgba(64,64,64,0.15);
+    border: 3px solid rgba(255,255,255,0.3);
+    padding:30px;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.15);
+}
+
+.section:nth-child(1) {
+  background-image: url('white.jpg'); 
+}
+
+.section:nth-child(2) {
+  background-image: url('white.jpg'); 
+}
+
+.section:nth-child(3) {
+  background-image: url('white.jpg'); 
+}
+
+.section:nth-child(4) {
+  background-image: url('white.jpg'); 
+}
+
+.heading {
+  text-align: center;
+  font-style: italic;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.content p {
+  color:darkblue;
+}
+
+.content li {
+  color:black;
+  font-weight: bold;
+}
+
+.learn-more {
+  display: block;
+  margin: 0 auto; 
+  color: #fff;
+  background-color: #007bff;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.learn-more:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+.section2 { 
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-stretch: semi-expanded;
+    font-size: large;
+}
+
+  .emotion-bigbox{
+    background-image: url(blossom.jpg);
+    border-radius: 10px;
+    margin:auto;
+    margin-top:30px;
+    padding-top:20px;
+    width: 75%;
+    
+  }
+  .emotion-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+  .emotion-box {
+    width: 100%;
+    background-color:plum;
+    border: 1px solid pink;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .emotion-title {
+    background-color: whitesmoke;
+    
+    padding: 10px;
+    cursor: pointer;
+    color: pink;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .emotion-content {
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left:20px;
+    color: black;
+  }
+  .learn-more-btn {
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .containerbig{
+    display:flex;
+    justify-content: center;
+}
+.containerthree{
+    justify-content: center;
+    margin:auto;
+    padding-left:40px;
+    padding-right:99px;
+}
+.containertwo{
+    margin-top: 0px;
+    margin-left:100px;
+    margin-right: 0px;
+    width:60%;
+}
+.questions {
+    
+    color:white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #1e1818; 
+  color:pink;
+}
+
+p4{
+    font-family: 'Times New Roman', Times, serif;
+    color:white
+}
+h3 {
+  margin-top: 0;
+  font-family: 'Times New Roman', Times, serif;
+/* Darker text color for questions */
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="chat-window" class="chat-window">
+        <div id="chat-messages" class="chat-messages"></div>
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="user-input" class="user-input" placeholder="Type your message...">
+            <button type="submit" class="send-button">Send</button>
+        </form>
+    </div>
+    <header>
+        <div class="container">
+            <h1>Mentis</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#emotions">Emotions</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="#chatbot">Chatbot</a></li>
+                    <li><a href="FAQ">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br></br>
+    <br></br>
+    <br></br>
+    <section2>
+        <section2 class="section2">
+            <h1>About Us</h1>
+            <p>At Mentis, we're dedicated to providing a safe and supportive space for individuals to explore, learn, and grow in their mental health journey. Our platform is designed to offer resources, tools, and a sense of community for those seeking guidance, support, and understanding.</p>
+</section2>
+<div class="section-wrapper">
+  <section class="section">
+    <div class="containerone">
+      <div class="content">
+        <h2 class="heading">Our Mission</h2>
+        <ul>
+            <li>Empowerment through knowledge
+                <p>We believe that education is key to understanding and managing mental health challenges. Our mission is to empower individuals with accurate information, resources, and practical strategies to enhance their mental well-being.</p>
+            </li>
+            <li>Fostering connection
+                <p>Our platform serves as a virtual community where individuals can connect with others who share similar experiences, challenges, and goals. We believe in the healing power of connection and peer support.</p>
+            </li>
+        </ul>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="containerone">
+      <div class="content">
+        <h2 class="heading">Who we are?</h2>
+        <ul>
+            <li>Passionate advocates
+                <p>We are passionate advocates for mental health awareness and support.Through writing, community engagement; we are committed to making a positive difference in the lives of those affected by such issues.</p>
+            </li>
+            <li>Community members
+                <p>More than just a team; we are a community. Many of us have personally experienced struggles mentally and understand the importance of empathy and support in one's journey to recovery and resilience.</p>
+            </li>
+        </ul>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="containerone">
+      <div class="content">
+        <h2 class="heading">What we offer?</h2>
+        <ul>
+            <li>Informative Resources
+                <p>Our website features a wealth of articles and resources covering various topics, from anxiety and depression to stress management and self-care. These are carefully curated to provide accurate information and practical tips for mental well-being.</p>
+            </li>
+            <li>Interactive Tools
+                <p>We offer interactive tools and a self assessment quiz designed to enhance self-awareness and emotional resilience. Our tools empower individuals to actively participate in their mental health journey.</p>
+            </li>
+        </ul>        
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="containerone">
+      <div class="content">
+        <h2 class="heading">Get involved!</h2>
+        <ul>
+            <li>Share your story 
+                <p>We encourage individuals to share their personal experiences with mental health challenges, recovery, and resilience. Your story has the power to inspire and uplift others who may be facing similar struggles.
+                </p>
+            </li>
+            <li>Stay connected
+                <p>Stay updated on the latest news, articles, and events by following us on social media and subscribing to our newsletter. Together, we look forward to the creation of a more supportive and understanding community around mental health.</p>
+            </li>
+        </ul>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="emotion-bigbox">
+    <div class="emotion-container">
+      <div class="emotion-box" id="sad">
+        <div class="emotion-title" id="sad" onclick="toggleEmotion('sad')" >Sad</div>
+        <div class="emotion-content hidden">
+          <p>From feeling down from time to time to experiencing the persistent sadness of clinical depression, there are things all of us can do to reduce feelings of sadness in our lives.</p>
+          <button class="learn-more-btn" onclick="toggleEmotion1('sad')">Learn More</button>
+        </div>
+      </div>
+    
+      <div class="emotion-box" id="anger">
+        <div class="emotion-title" onclick="toggleEmotion('anger')">Anger</div>
+        <div class="emotion-content hidden">
+          <p>We all get mad and annoyed sometimes. It’s natural. But when those emotions happen way too often, they can be distracting, stressful, and we need to manage them before things get worse.</p>
+          <button class="learn-more-btn" onclick="toggleEmotion1('anger')">Learn More</button>
+        </div>
+      </div>
+    
+      <div class="emotion-box" id="lonely">
+        <div class="emotion-title" onclick="toggleEmotion('lonely')">Lonely</div>
+        <div class="emotion-content hidden">
+          <p>Loneliness can literally mean being isolated from other people, but it’s often about not feeling understood or connected to those around us. Whatever the struggle, there are ways to overcome loneliness.</p>
+          <button class="learn-more-btn" onclick="toggleEmotion1('lonely')">Learn More</button>
+        </div>
+      </div>
+    
+      <div class="emotion-box" id="hopeless">
+        <div class="emotion-title" onclick="toggleEmotion('hopeless')">Hopeless</div>
+        <div class="emotion-content hidden">
+          <p>When life feels bleak, and it’s hard to find hope or figure out what to do next, there are always actions we can take to feel better.</p>
+          <button class="learn-more-btn" onclick="toggleEmotion1('hopeless')">Learn More</button>
+        </div>
+      </div>
+    
+      <div class="emotion-box" id="anxious">
+        <div class="emotion-title" onclick="toggleEmotion('anxious')">Anxious</div>
+        <div class="emotion-content hidden">
+          <p>Many people struggle with feelings of anxiety. But we can work through and overcome those feelings to make the most of work, school, relationships and life.</p>
+          <button class="learn-more-btn" onclick="toggleEmotion1('anxious')">Learn More</button>
+        </div>
+      </div>
+    
+    </div>
+    </div>
+    <br></br>
+  <section class="questions">
+    <div class="containerbig">
+    <div class="containerthree">
+        <h2>Common Questions</h2>
+        
+        <p4>Here are some of the most common questions that we get.</p4>
+    </div>
+    <div class="containertwo">
+        <div class="question">
+        <h3>What is this website for?</h3>
+        <p4>This website is designed to provide support and resources for individuals with mental health issues.</p4>
+        </div>
+        <br></br>
+        <div class="question">
+        <h3>Is the information on this website reliable?</h3>
+        <p4>Yes, all information provided on this website is thoroughly researched and reviewed by mental health professionals.</p4>
+        </div>
+        <br></br>
+        <div class="question">
+        <h3>How can I contact someone for help?</h3>
+        <p4>You can reach out to our support team through the contact form on the website or by emailing us directly at 
+        <br>support@mentalhealthwebsite.com.</p4>
+        </div>
+        <br></br>
+        <div class="question">
+        <h3>Are the resources on this website free to access?</h3>
+        <p4>Yes, all resources on this website are free for users to access and utilize for their mental health needs.</p4>
+        </div>
+        <br></br>
+        <div class="question">
+        <h3>Can I trust the confidentiality of my information on this website?</h3>
+        <p4>Absolutely, we prioritize the confidentiality and security of all user information shared on this website.</p4>
+        </div>
+    </div>
+</div>
+  </section>
+<br></br>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mental Health Support</p>
+        </div>
+    </footer>
+
+    <script>
+    // Chatbot
+    const chatForm = document.getElementById('chat-form');
+        const chatMessages = document.getElementById('chat-messages');
+
+        chatForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const userInput = document.getElementById('user-input').value;
+            const botResponse = getBotResponse(userInput);
+
+            displayMessage(userInput, 'user');
+            displayMessage(botResponse, 'bot');
+
+            chatForm.reset();
+        });
+
+        function displayMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(userInput) {
+            var samp1 = /depressed/;
+            var samp2 = /unhappy/;
+            var samp3 = /angry/;
+            var samp4 = /bipolar/;
+            var samp5 = /angry/;
+            var samp6 = /anxiety/;
+            var samp7 = /sad/;
+            var result = samp1.test(userInput) || samp2.test(userInput) || samp3.test(userInput) || samp4.test(userInput) || samp5.test(userInput) || samp6.test(userInput) || samp7.test(userInput);
+            if (result) {
+                return "Please answer the questionnaire as you seem to have similar symptoms.";
+            }
+            return "Hi! How may I assist you?";
+        }
+
+        //Emotions
+        function toggleEmotion1(emotion){
+    window.location.href = emotion + '.html';
+  }
+  function toggleEmotion(emotion) {
+    var box = document.getElementById(emotion);
+    var content = box.querySelector('.emotion-content');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      box.style.height = content.scrollHeight + 'px';
+    } else {
+      content.classList.add('hidden');
+      box.style.height = box.querySelector('.emotion-title').scrollHeight + 'px';
+    }
+  }
+    </script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        .section {
+
+            padding-top:100px;
+            text-align: center;
+        }
+        .abb {
+
+            padding-top:100px;
+            text-align: center;
+        }
+        .container {
+            display: block;
+            max-width: 800px;
+            margin: 0 auto;
+
+        }
+
+        .container h2 {
+            color: #2c3e50;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            clear: both;
+            animation: fadeInUp 1s ease;
+        }
+
+        #mental-mindframe {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        #forum-posts {
+            margin-bottom: 20px;
+        }
+
+        #forum-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #forum-form label,
+        #forum-form textarea,
+        #forum-form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #forum-form textarea {
+            height: 100px;
+        }
+        #about {
+            padding-top: 100px; /* Adjust this value as needed */
+        }
+
+        #forum-form button {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #forum-form button:hover {
+            background-color: #34495e;
+        }
+
+        #chat-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        #chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        #chat-form {
+            display: flex;
+            align-items: center;
+        }
+
+        #chat-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #chat-form button {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #chat-form button:hover {
+            background-color: #34495e;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message strong {
+            color: #2c3e50;
+        }
+
+        /* Additional Styling for Aesthetics */
+        #about,
+        #bpd,
+        #personality-disorders,
+        #mental-mindframe,
+        #resources,
+        #forum,
+        #chatbot,
+        #quiz{
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mentis</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#bpd">BPD</a></li>
+                    <li><a href="#personality-disorders">Personality Disorders</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#forum">Forum</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="#chatbot">Chatbot</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class ="abb">
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About</h2>
+            <p>Welcome to our mental health support website. We provide resources and information to help you maintain and improve your mental well-being.</p>
+        </div>
+    </section>
+    </div>
+
+    <section id="bpd" class="section">
+        <div class="container">
+            <h2>Borderline Personality Disorder (BPD)</h2>
+            <p>BPD is a mental health disorder characterized by unstable moods, behavior, and relationships. Learn more about BPD <a href="https://www.nimh.nih.gov/health/topics/borderline-personality-disorder/index.shtml">here</a>.</p>
+        </div>
+    </section>
+
+    <section id="personality-disorders" class="section">
+        <div class="container">
+            <h2>Other Personality Disorders</h2>
+            <p>Explore information about various personality disorders such as narcissistic personality disorder, antisocial personality disorder, and more.</p>
+        </div>
+    </section>
+
+    <section id="personality-disorders" class="section">
+        <div class="container">
+            <h2>Personality Disorders</h2>
+            <p>Personality disorders are mental health conditions that affect the way a person thinks, feels, and behaves. They can cause significant impairment in relationships and daily functioning. Other common personality disorders include:</p>
+            <ul>
+                <li><strong>Antisocial Personality Disorder (ASPD)</strong>: Characterized by a disregard for others' rights and a lack of empathy.</li>
+                <li><strong>Narcissistic Personality Disorder (NPD)</strong>: Characterized by a grandiose sense of self-importance, a need for admiration, and a lack of empathy for others.</li>
+                <li><strong>Obsessive-Compulsive Personality Disorder (OCPD)</strong>: Characterized by a preoccupation with orderliness, perfectionism, and control.</li>
+                <li><strong>Schizoid Personality Disorder</strong>: Characterized by a lack of interest in social relationships, a tendency towards solitary activities, and emotional coldness.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="mental-mindframe" class="section">
+        <div class="container">
+            <h2>Mental Mindframe</h2>
+            <p>Please note that this test is for informational purposes only and should not replace professional diagnosis or consultation. Answer the following questions honestly to get an idea of potential mental health conditions:</p>
+            <form id="mental-mindframe-form">
+                
+                <label for="question1">Question 1: Do you often experience intense mood swings?</label>
+                <select id="question1" name="question1" required>
+                    <option value="">Please select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <br></br>
+
+                <label for="question2">Question 2: Do you have difficulty maintaining stable relationships?</label>
+                <select id="question2" name="question2" required>
+                    <option value="">Please select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <br></br>
+
+                <label for="question3">Question 3: Do you often feel anxious or worried?</label>
+                <select id="question3" name="question3" required>
+                    <option value="">Please select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <br></br>
+
+                <label for="question4">Question 4: Do you have trouble concentrating or staying focused?</label>
+                <select id="question4" name="question4" required>
+                    <option value="">Please select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <br></br>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="mental-mindframe-result"></div>
+        </div>
+    </section>
+    <section id="resources" class="section">
+        <div class="container">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://www.nami.org/">National Alliance on Mental Illness (NAMI)</a></li>
+                <li><a href="https://www.psychologytoday.com/us/therapists">Find a Therapist</a></li>
+                <li><a href="https://www.crisistextline.org/">Crisis Text Line</a></li>
+                <li><a href="https://www.7cups.com/">7 Cups</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="forum" class="section">
+        <div class="container">
+            <h2>Forum</h2>
+            <div id="forum-posts">
+                <!-- Forum posts will be loaded dynamically here -->
+            </div>
+            <form id="forum-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="post">Post:</label>
+                <textarea id="post" name="post" required></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="chatbot" class="section">
+        <div class="container">
+            <h2>Chatbot</h2>
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <form id="chat-form">
+                    <input type="text" id="user-input" placeholder="Type your message...">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mental Health Support</p>
+        </div>
+    </footer>
+
+    <script>
+    // Mental Mindframe Test
+    const mentalMindframeForm = document.getElementById('mental-mindframe-form');
+            const mentalMindframeResult = document.getElementById('mental-mindframe-result');
+
+            mentalMindframeForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Gather user responses
+                const question1 = document.getElementById('question1').value;
+                const question2 = document.getElementById('question2').value;
+                const question3 = document.getElementById('question3').value;
+                const question4 = document.getElementById('question4').value;
+
+                // Perform analysis (Example: Just a simple example, not diagnostic)
+                let result = '';
+
+                // Modify based on user responses
+                if (question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 === 'yes') {
+                    result = 'Based on your responses, you may want to consult a mental health professional for further evaluation.';
+                } else {
+                    result = 'Based on your responses, it is unlikely that you have a severe mental health condition. However, if you have concerns, it is advisable to seek professional advice.';
+                }
+
+                // Display result
+                mentalMindframeResult.textContent = result;
+            });
+
+    // Forum
+    const forumForm = document.getElementById('forum-form');
+    const forumPostsContainer = document.getElementById('forum-posts');
+
+    forumForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const post = document.getElementById('post').value;
+
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('forum-post');
+        postDiv.innerHTML = `
+            <p><strong>${username}:</strong> ${post}</p>
+        `;
+        forumPostsContainer.appendChild(postDiv);
+
+        forumForm.reset();
+    });
+
+    // Chatbot
+    const chatForm = document.getElementById('chat-form');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const userInput = document.getElementById('user-input').value;
+        const botResponse = getBotResponse(userInput);
+
+        displayMessage(userInput, 'user');
+        displayMessage(botResponse, 'bot');
+
+        chatForm.reset();
+    });
+
+    function displayMessage(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message');
+        messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+    }
+
+    function getBotResponse(userInput) {
+        var samp1 = /depressed/;
+        var samp2 = /unhappy/;
+        var samp3 = /borderline/;
+        var samp4 = /bipolar/;
+        var samp5 = /angry/;
+        var samp6 = /anxiety/;
+        var samp7 = /sad/;
+        var result = samp1.test(userInput) || samp2.test(userInput) || samp3.test(userInput) || samp4.test(userInput) || samp5.test(userInput) || samp6.test(userInput) || samp7.test(userInput);
+        if (result) {
+            return "Please answer the questionnaire as you seem to have similar symptoms.";
+        }
+        return "Hi! How may I assist you?";
+    }
+
+    
+
+    </script>
+</body>
+</html>

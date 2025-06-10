@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Section with Textboxes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body{
+                background-image: url('sad.jpg');
+                background-size:cover;
+            }
+            body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.centered-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+    width: 30%;
+    background: rgba(64,64,64,0.15);
+    border: 3px solid rgba(255,255,255,0.3);
+    padding:30px;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.15);
+}
+
+.heading {
+  font-size: 24px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.content {
+  color: lightcyan;
+  text-align: justify;
+}
+.section{
+    padding-top:100px;
+    text-align: center;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+    </style>
+
+<section class="centered-section">
+  <div class="container">
+    <h2 class="heading">Feeling Sad?</h2>
+    <p class="content">Feeling sadness is a natural part of the human experience. It's a reminder that we are capable of deep emotions and that we are alive. However, it's important to remember that sadness is just a chapter in your story, not the end of your book.Sadness can be a catalyst for growth and self-discovery. It teaches us resilience, empathy, and the importance of self-care. It's okay to feel sad, but it's also important to remember that you have the strength within you to overcome it.So, when sadness knocks on your door, embrace it as a teacher rather than a foe. Allow yourself to feel it, but don't let it define you. that brighter days are ahead.</p>
+  </div>
+</section>
+
+</body>
+</html>

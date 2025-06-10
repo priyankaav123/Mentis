@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Section with Textboxes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body{
+                background-image: url('hopeless.png');
+                background-size:cover;
+            }
+            body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.centered-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+    width: 30%;
+    background: rgba(64,64,64,0.15);
+    border: 3px solid rgba(255,255,255,0.3);
+    padding:30px;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.15);
+}
+
+.heading {
+  font-size: 24px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.content {
+  color: lightcyan;
+  text-align: justify;
+}
+.section{
+    padding-top:100px;
+    text-align: center;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+    </style>
+
+<section class="centered-section">
+  <div class="container">
+    <h2 class="heading">Feeling Hopeless?</h2>
+    <p class="content">In moments of hopelessness, remember that adversity is often the gateway to resilience and growth. It's during our darkest hours that we discover the strength within us, the power to rise above challenges, and the resilience to overcome even the most daunting obstacles. Each setback is an opportunity for learning and transformation, and every step forward, no matter how small, brings us closer to the light. Hold onto hope, for it is the beacon that guides us through the storm. Believe in the possibility of brighter days ahead, and trust that with patience, perseverance, and a steadfast heart, you can conquer any adversity that comes your way.</p>
+</section>
+</body>
+</html>
