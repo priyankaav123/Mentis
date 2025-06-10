@@ -11,8 +11,6 @@ To democratize mental health resources by providing an intuitive, research-backe
 ### 🔍 **Self-Assessment Questionnaire**
 - Comprehensive mental health screening tools
 - Personalized results and recommendations
-- Privacy-focused data handling
-- Progress tracking capabilities
 
 ### 🤖 **AI-Powered Chatbot**
 - 24/7 emotional support companion
